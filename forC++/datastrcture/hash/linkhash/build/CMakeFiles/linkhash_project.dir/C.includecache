@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../code/lib/linkhash.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdbool.h
+-
+
+/home/ubuntu/Desktop/forC++/datastrcture/hash/linkhash/code/source/linkhash.c
+linkhash.h
+/home/ubuntu/Desktop/forC++/datastrcture/hash/linkhash/code/source/linkhash.h
+

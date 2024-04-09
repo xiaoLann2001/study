@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/sqlist_project.dir/main.c.o CMakeFiles/sqlist_project.dir/code/sqlist/sqlist.c.o  -o sqlist_project 

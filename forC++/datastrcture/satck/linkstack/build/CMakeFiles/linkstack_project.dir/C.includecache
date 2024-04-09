@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../code/linkstack.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+
+/home/ubuntu/Desktop/forC++/datastrcture/satck/linkstack/main.c
+linkstack.h
+/home/ubuntu/Desktop/forC++/datastrcture/satck/linkstack/linkstack.h
+

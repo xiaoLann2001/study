@@ -1,0 +1,3 @@
+/home/ubuntu/Desktop/forC++/datastrcture/satck/linkstack/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Desktop/forC++/datastrcture/satck/linkstack/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/Desktop/forC++/datastrcture/satck/linkstack/build/CMakeFiles/linkstack_project.dir

@@ -1,0 +1,3 @@
+/home/ubuntu/Desktop/forC++/datastrcture/liner/linklist/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Desktop/forC++/datastrcture/liner/linklist/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/Desktop/forC++/datastrcture/liner/linklist/build/CMakeFiles/linklist_project.dir

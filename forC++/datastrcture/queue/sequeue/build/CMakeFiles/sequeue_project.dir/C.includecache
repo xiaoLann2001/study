@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../code/sequeue.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+string.h
+-
+
+/home/ubuntu/Desktop/forC++/datastrcture/queue/sequeue/code/sequeue.c
+sequeue.h
+/home/ubuntu/Desktop/forC++/datastrcture/queue/sequeue/code/sequeue.h
+
+/home/ubuntu/Desktop/forC++/datastrcture/queue/sequeue/code/sequeue.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+string.h
+-
+
+/home/ubuntu/Desktop/forC++/datastrcture/queue/sequeue/main.c
+sequeue.h
+/home/ubuntu/Desktop/forC++/datastrcture/queue/sequeue/sequeue.h
+

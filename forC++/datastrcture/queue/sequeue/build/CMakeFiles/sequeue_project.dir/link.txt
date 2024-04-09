@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/sequeue_project.dir/main.c.o CMakeFiles/sequeue_project.dir/code/sequeue.c.o  -o sequeue_project 

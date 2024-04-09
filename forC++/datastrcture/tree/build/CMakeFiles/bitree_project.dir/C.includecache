@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../code/lib/bitree/bitree.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdbool.h
+-
+
+../code/lib/linkqueue/linkqueue.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+string.h
+-
+bitree.h
+../code/lib/linkqueue/bitree.h
+
+/home/ubuntu/Desktop/forC++/datastrcture/tree/code/source/bitree/bitree.c
+bitree.h
+/home/ubuntu/Desktop/forC++/datastrcture/tree/code/source/bitree/bitree.h
+linkqueue.h
+/home/ubuntu/Desktop/forC++/datastrcture/tree/code/source/bitree/linkqueue.h
+

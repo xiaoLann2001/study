@@ -1,0 +1,3 @@
+/home/ubuntu/Desktop/forC++/datastrcture/tree/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Desktop/forC++/datastrcture/tree/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/Desktop/forC++/datastrcture/tree/build/CMakeFiles/bitree_project.dir

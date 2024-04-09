@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/sqstack_project.dir/main.c.o CMakeFiles/sqstack_project.dir/code/sqstack/sqstack.c.o  -o sqstack_project 

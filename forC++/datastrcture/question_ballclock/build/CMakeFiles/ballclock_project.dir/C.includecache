@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../code/lib/linkqueue/linkqueue.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+string.h
+-
+
+../code/lib/sqstack/sqstack.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+string.h
+-
+
+/home/ubuntu/Desktop/forC++/datastrcture/ballclock/main.c
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+linkqueue.h
+/home/ubuntu/Desktop/forC++/datastrcture/ballclock/linkqueue.h
+sqstack.h
+/home/ubuntu/Desktop/forC++/datastrcture/ballclock/sqstack.h
+

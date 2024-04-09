@@ -1,0 +1,3 @@
+/home/ubuntu/Desktop/forC++/datastrcture/queue/linkqueue/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Desktop/forC++/datastrcture/queue/linkqueue/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/Desktop/forC++/datastrcture/queue/linkqueue/build/CMakeFiles/linkqueue_project.dir

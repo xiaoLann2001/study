@@ -1,0 +1,3 @@
+/home/book/nfs_rootfs/code/forC++/onnxTest/videoTest_multhpread/build/CMakeFiles/rebuild_cache.dir
+/home/book/nfs_rootfs/code/forC++/onnxTest/videoTest_multhpread/build/CMakeFiles/videoTest.dir
+/home/book/nfs_rootfs/code/forC++/onnxTest/videoTest_multhpread/build/CMakeFiles/edit_cache.dir

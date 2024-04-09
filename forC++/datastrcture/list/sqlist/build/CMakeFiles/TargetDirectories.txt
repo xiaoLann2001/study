@@ -1,0 +1,3 @@
+/home/ubuntu/Desktop/forC++/datastrcture/liner/sqlist/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/Desktop/forC++/datastrcture/liner/sqlist/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Desktop/forC++/datastrcture/liner/sqlist/build/CMakeFiles/sqlist_project.dir

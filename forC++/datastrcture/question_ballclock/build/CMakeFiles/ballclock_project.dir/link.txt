@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/ballclock_project.dir/main.c.o CMakeFiles/ballclock_project.dir/code/source/linkqueue/linkqueue.c.o CMakeFiles/ballclock_project.dir/code/source/sqstack/sqstack.c.o  -o ballclock_project 

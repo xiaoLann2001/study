@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../code/linklist/linklist.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+
+/home/ubuntu/Desktop/forC++/datastrcture/liner/linklist/main.c
+linklist.h
+/home/ubuntu/Desktop/forC++/datastrcture/liner/linklist/linklist.h
+

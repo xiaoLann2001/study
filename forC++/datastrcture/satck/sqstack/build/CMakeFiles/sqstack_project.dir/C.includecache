@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu/Desktop/forC++/datastrcture/satck/sqstack/code/sqstack/sqstack.c
+sqstack.h
+/home/ubuntu/Desktop/forC++/datastrcture/satck/sqstack/code/sqstack/sqstack.h
+
+/home/ubuntu/Desktop/forC++/datastrcture/satck/sqstack/code/sqstack/sqstack.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+string.h
+-
+

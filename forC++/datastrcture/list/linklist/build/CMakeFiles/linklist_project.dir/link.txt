@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/linklist_project.dir/main.c.o CMakeFiles/linklist_project.dir/code/linklist/linklist.c.o  -o linklist_project 

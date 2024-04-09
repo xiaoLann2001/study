@@ -1,0 +1,3 @@
+/home/book/nfs_rootfs/code/forC++/onnxTest/pictureTest/build/CMakeFiles/rebuild_cache.dir
+/home/book/nfs_rootfs/code/forC++/onnxTest/pictureTest/build/CMakeFiles/pictureTest.dir
+/home/book/nfs_rootfs/code/forC++/onnxTest/pictureTest/build/CMakeFiles/edit_cache.dir

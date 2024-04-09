@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../code/linkqueue.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+string.h
+-
+
+/home/ubuntu/Desktop/forC++/datastrcture/queue/linkqueue/main.c
+linkqueue.h
+/home/ubuntu/Desktop/forC++/datastrcture/queue/linkqueue/linkqueue.h
+

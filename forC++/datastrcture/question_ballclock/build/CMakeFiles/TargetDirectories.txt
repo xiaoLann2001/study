@@ -1,0 +1,3 @@
+/home/ubuntu/Desktop/forC++/datastrcture/ballclock/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/Desktop/forC++/datastrcture/ballclock/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Desktop/forC++/datastrcture/ballclock/build/CMakeFiles/ballclock_project.dir

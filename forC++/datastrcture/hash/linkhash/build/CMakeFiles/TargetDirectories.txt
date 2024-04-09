@@ -1,0 +1,3 @@
+/home/ubuntu/Desktop/forC++/datastrcture/hash/linkhash/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/Desktop/forC++/datastrcture/hash/linkhash/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Desktop/forC++/datastrcture/hash/linkhash/build/CMakeFiles/linkhash_project.dir

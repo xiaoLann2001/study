@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/linkstack_project.dir/main.c.o CMakeFiles/linkstack_project.dir/code/linkstack.c.o  -o linkstack_project 
