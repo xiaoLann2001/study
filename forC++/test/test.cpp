@@ -1,71 +1,34 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-#include <string>
-using namespace std;
 
-class Person
-{    
-private:
-    string m_name;
-    int m_age;
-public:
-    Person(string name, int age);
-    void showPerson(void);
-    ~Person();
-};
-
-Person::Person(string name, int age)
+// 创建一个加法运算模板
+template<class T>
+T func_add(T a, T b)
 {
-    this->m_name = name;
-    this->m_age = age;
+    return a + b;
 }
 
-void Person::showPerson(void)
+// 创建一个交换模板
+template<class T>
+T func_swap(T &a, T &b)
 {
-    cout << this->m_name << "\t" << this->m_age << endl;
+    T temp;
+    temp = a;
+    a = b;
+    b = temp;
 }
 
-Person::~Person()
-{
-}
+int main(){
+    using std::cout;
+    using std::endl;
 
-void myPrint(Person& p)
-{
-    p.showPerson();
-}
+    int a = 10;
+    int b = 20;
 
-int main()
-{
-    // vector<int> v;
-    // v.push_back(1);
-    // v.push_back(2);
-    // v.push_back(3);
-    // v.push_back(4);
+    cout << "sum of " << a << " and " << b << " is " << func_add(a ,b) << endl;
 
-    // vector<int>::iterator itBegin = v.begin();
-    // vector<int>::iterator itEnd = v.end();
-    // while (itBegin != itEnd)
-    // {
-    //     cout << *itBegin << endl;
-    //     itBegin++;
-    // }
+    func_swap(a, b);
 
-    // for (vector<int>::iterator itBegin = v.begin(); itBegin != v.end(); itBegin++)
-    // {
-    //     cout << *itBegin << endl;
-    // }
-
-
-    Person p1("张三", 50);
-    Person p2("李四", 60);
-
-    vector<Person> v_person;
-    v_person.push_back(p1);
-    v_person.push_back(p2);
-
-    //使用algorithm
-    for_each(v_person.begin(), v_person.end(), myPrint);
+    cout << "sum of " << a << " and " << b << " is " << func_add(a ,b) << endl;
 
     return 0;
 }

@@ -1,1 +1,0 @@
-/usr/bin/cc    CMakeFiles/linkhash_project.dir/main.c.o CMakeFiles/linkhash_project.dir/code/source/linkhash.c.o  -o linkhash_project 

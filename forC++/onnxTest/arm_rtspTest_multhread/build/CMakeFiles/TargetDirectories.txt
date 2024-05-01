@@ -1,0 +1,3 @@
+/home/book/nfs_rootfs/git/study/forC++/onnxTest/arm_rtspTest_multhread/build/CMakeFiles/rebuild_cache.dir
+/home/book/nfs_rootfs/git/study/forC++/onnxTest/arm_rtspTest_multhread/build/CMakeFiles/rtspTest.dir
+/home/book/nfs_rootfs/git/study/forC++/onnxTest/arm_rtspTest_multhread/build/CMakeFiles/edit_cache.dir
