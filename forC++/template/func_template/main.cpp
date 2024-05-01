@@ -93,6 +93,60 @@ void func_printArray(T* arr, int len)
     std::cout << std::endl;
 }
 
+// 创建Person类
+class Person
+{
+public:
+    Person(std::string name, int age)
+    {
+        this->name = name;
+        this->age = age;
+    }
+
+    // 1.重载==操作符
+    // bool operator==(Person &p)
+    // {
+    //     if (this->name == p.name && this->age == p.age)
+    //     {
+    //         return true;
+    //     }
+    //     else
+    //     {
+    //         return false;
+    //     }
+    // }
+
+    std::string name;
+    int age;
+};
+
+// 创建对比数据是否相等模板
+template<class T>
+bool func_compare(T a, T b)
+{
+    if (a == b)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+// 2.重载函数模板func_compare
+template<> bool func_compare(Person p1, Person p2)
+{
+    if (p1.name == p2.name && p1.age == p2.age)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 void test1()
 {
     // 函数模板的两种调用方式：
@@ -161,11 +215,29 @@ void test3()
 
 }
 
+void test4()
+{
+    Person p1("Tom", 18);
+    Person p2("Tom", 28);
+
+    if (func_compare(p1, p2))   // 错误：没有对Person类进行重载==操作符
+                                // 解决方法：1.对Person类进行重载==操作符，缺点：需要修改Person类，遇到大于小于等操作符时需要写新的重载
+                                //          2.重载函数模板func_compare
+    {
+        cout << "p1 == p2" << endl;
+    }
+    else
+    {
+        cout << "p1 != p2" << endl;
+    }
+}
+
 int main()
 {
     // test1();
     // test2();
-    test3();
+    // test3();
+    test4();
 
     return 0;
 }
