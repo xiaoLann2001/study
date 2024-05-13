@@ -1,34 +1,41 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 
-// 创建一个加法运算模板
-template<class T>
-T func_add(T a, T b)
-{
-    return a + b;
-}
+using namespace std;
 
-// 创建一个交换模板
-template<class T>
-T func_swap(T &a, T &b)
-{
-    T temp;
-    temp = a;
-    a = b;
-    b = temp;
-}
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        int size = nums.size();
+        for (int i = 0; i < size; ) {
+            if (nums[i] == val){
+                for (int j = i; j < size - 1; j++){
+                    nums[j] = nums[j + 1];
+                }
+                size--;
+            }
+            else
+                i++;
+        }
+
+        return size;
+    }
+};
 
 int main(){
-    using std::cout;
-    using std::endl;
+    Solution s;
 
-    int a = 10;
-    int b = 20;
+    vector<int> nums = {0,1,2,2,3,0,4,2};
+    int val = 2;
 
-    cout << "sum of " << a << " and " << b << " is " << func_add(a ,b) << endl;
+    int ret = s.removeElement(nums, val);
+    cout << "ret = " << ret << endl;
 
-    func_swap(a, b);
-
-    cout << "sum of " << a << " and " << b << " is " << func_add(a ,b) << endl;
+    for_each(nums.begin(), nums.end(), [](int v) {
+        cout << v << " ";
+    });
+    cout << endl;
 
     return 0;
 }
