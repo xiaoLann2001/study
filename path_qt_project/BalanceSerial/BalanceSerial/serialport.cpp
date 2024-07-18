@@ -93,7 +93,7 @@ void Serialport::handleTimeout()
 
         for (size_t i = 0; i < sizeof(rfs); ++i)
         {
-            rfs.charArray[i] = frameData[i + 2]; // 帧头占2位
+            rfs.charArray[i] = frameData.at(i + 2); // 帧头占2位
         }
 
         QString sensorData = QString{"Pitch = %1, Roll = %2, Yaw = %3, EA = %4, EB = %5"}
