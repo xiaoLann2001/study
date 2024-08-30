@@ -14,11 +14,17 @@ int main() {
     socklen_t addr_len = sizeof(client_addr);
     char *message = "Hello from server";
 
+    printf("server is staring...\n");
+
     // 创建UDP套接字
     if ((server_fd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
         perror("socket failed");
         exit(EXIT_FAILURE);
     }
+
+    // 允许绑定地址快速重用
+    int opt = 1;
+    setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(int));
 
     // 绑定IP和端口
     server_addr.sin_family = AF_INET;
@@ -31,14 +37,26 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    // 接收来自客户端的数据
-    int n = recvfrom(server_fd, (char *)buffer, BUFFER_SIZE, 0, (struct sockaddr *)&client_addr, &addr_len);
-    buffer[n] = '\0';
-    printf("Message from client: %s\n", buffer);
+    while (1)
+    {
+        int n = -1;
+        char addr[INET_ADDRSTRLEN];
+        // 接收来自客户端的数据
+        bzero(buffer, BUFFER_SIZE);
+        if ((n = recvfrom(server_fd, (char *)buffer, BUFFER_SIZE - 1, 0, (struct sockaddr *)&client_addr, &addr_len)) < 0) {
+            perror("recvfrom");
+            continue;
+        }
+        buffer[n] = '\0';
+        if (NULL == inet_ntop(AF_INET, (void *)&client_addr.sin_addr, addr, sizeof(client_addr))) {
+            perror("inet_ntop");
+            continue;
+        }
+        printf("Message from client(%s : %d): %s\n", addr, ntohs(client_addr.sin_port), buffer);
 
-    // 发送消息给客户端
-    sendto(server_fd, (const char *)message, strlen(message), 0, (const struct sockaddr *)&client_addr, addr_len);
-    printf("Hello message sent.\n");
+        // 发送消息给客户端
+        sendto(server_fd, (const char *)message, strlen(message), 0, (const struct sockaddr *)&client_addr, addr_len);
+    }
 
     // 关闭套接字
     close(server_fd);

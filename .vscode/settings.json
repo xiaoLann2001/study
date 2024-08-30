@@ -58,6 +58,9 @@
         "unordered_set": "cpp",
         "net.h": "c",
         "unistd.h": "c",
-        "stdio.h": "c"
-    }
+        "stdio.h": "c",
+        "select.h": "c",
+        "errno.h": "c"
+    },
+    "editor.fontSize": 16
 }
