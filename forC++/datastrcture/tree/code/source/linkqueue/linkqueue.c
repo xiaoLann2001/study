@@ -83,14 +83,14 @@ data_t linkqueue_dequeue(linkqueue* queue)
     if (NULL == queue)
     {
         printf("invalid queue\n");
-        return -1;
+        return NULL;
     }
 
     //check empty
     if (linkqueue_isEmpty(queue))
     {
         printf("queue is empty\n");
-        return -2;
+        return NULL;
     }  
 
     //dequeue

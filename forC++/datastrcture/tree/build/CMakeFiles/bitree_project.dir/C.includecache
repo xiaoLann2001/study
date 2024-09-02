@@ -28,9 +28,33 @@ string.h
 bitree.h
 ../code/lib/linkqueue/bitree.h
 
-/home/ubuntu/Desktop/forC++/datastrcture/tree/code/source/bitree/bitree.c
+../code/lib/linkstack/linkstack.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
 bitree.h
-/home/ubuntu/Desktop/forC++/datastrcture/tree/code/source/bitree/bitree.h
+../code/lib/linkstack/bitree.h
+
+/home/book/nfs_rootfs/study/forC++/datastrcture/tree/code/source/bitree/bitree.c
+bitree.h
+/home/book/nfs_rootfs/study/forC++/datastrcture/tree/code/source/bitree/bitree.h
 linkqueue.h
-/home/ubuntu/Desktop/forC++/datastrcture/tree/code/source/bitree/linkqueue.h
+/home/book/nfs_rootfs/study/forC++/datastrcture/tree/code/source/bitree/linkqueue.h
+linkstack.h
+/home/book/nfs_rootfs/study/forC++/datastrcture/tree/code/source/bitree/linkstack.h
+
+/home/book/nfs_rootfs/study/forC++/datastrcture/tree/code/source/linkqueue/linkqueue.c
+linkqueue.h
+/home/book/nfs_rootfs/study/forC++/datastrcture/tree/code/source/linkqueue/linkqueue.h
+
+/home/book/nfs_rootfs/study/forC++/datastrcture/tree/code/source/linkstack/linkstack.c
+linkstack.h
+/home/book/nfs_rootfs/study/forC++/datastrcture/tree/code/source/linkstack/linkstack.h
+
+/home/book/nfs_rootfs/study/forC++/datastrcture/tree/main.c
+bitree.h
+/home/book/nfs_rootfs/study/forC++/datastrcture/tree/bitree.h
 

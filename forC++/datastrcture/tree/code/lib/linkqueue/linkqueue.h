@@ -11,10 +11,10 @@
 // typedef int data_t;
 typedef bitree* data_t;
 
-typedef struct node_t
+typedef struct queue_node_t
 {
     data_t data;
-    struct node_t* next;
+    struct queue_node_t* next;
 }listnode, *linklist;
 
 typedef struct linkqueue_t

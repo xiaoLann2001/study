@@ -1,1 +1,1 @@
-/usr/bin/cc    CMakeFiles/bitree_project.dir/main.c.o CMakeFiles/bitree_project.dir/code/source/bitree/bitree.c.o CMakeFiles/bitree_project.dir/code/source/linkqueue/linkqueue.c.o  -o bitree_project 
+/usr/bin/cc    CMakeFiles/bitree_project.dir/main.c.o CMakeFiles/bitree_project.dir/code/source/bitree/bitree.c.o CMakeFiles/bitree_project.dir/code/source/linkqueue/linkqueue.c.o CMakeFiles/bitree_project.dir/code/source/linkstack/linkstack.c.o  -o bitree_project 

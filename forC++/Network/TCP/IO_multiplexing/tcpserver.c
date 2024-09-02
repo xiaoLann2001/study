@@ -71,8 +71,13 @@ int main() {
             }
         }
 
-        if (((activity = select(maxfd + 1, &r_set, NULL, NULL, &tout)) < 0) && (errno != EINTR)) {
-            printf("select failed\n");
+        activity = select(maxfd + 1, &r_set, NULL, NULL, &tout);
+        if (activity < 0 && errno != EINTR) {
+            perror("select error");
+            break;
+        } else if (activity == 0) {
+            printf("Timeout occurred! No data after 5 seconds.\n");
+            continue;
         }
 
         // 有新客户端连接

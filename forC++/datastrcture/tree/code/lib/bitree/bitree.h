@@ -20,6 +20,9 @@ void bitree_inorder(bitree* root);
 void bitree_postorder(bitree* root);
 void bitree_hierarchy(bitree* root);
 
+void bitree_preorder_stack(bitree* root);
+void bitree_inorder_stack(bitree* root);
+void bitree_postorder_stack(bitree* root);
 #endif
 
 
