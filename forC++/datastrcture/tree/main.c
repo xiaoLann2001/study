@@ -8,33 +8,13 @@ int main()
     // input: AB#CD###EFG##H##I##
     // input: ABD#H##E#KG###C#F##
 
-    printf("bitree_preorder: \t\t");
-    bitree_preorder(tree);
-    puts("");
-
-    printf("bitree_inorder: \t\t");
-    bitree_inorder(tree);
-    puts("");
-    
-    printf("bitree_postorder: \t\t");
-    bitree_postorder(tree);
-    puts("");
-
-    printf("bitree_hierarchy: \t\t");
-    bitree_hierarchy(tree);
-    puts("");
-
-    printf("bitree_preorder_stack: \t\t");
-    bitree_preorder_stack(tree);
-    puts("");
-
-    printf("bitree_inorder_stack: \t\t");
-    bitree_inorder_stack(tree);
-    puts("");
-
-    printf("bitree_postorder_stack: \t");
-    bitree_postorder_stack(tree);
-    puts("");
+    bitree_travel("bitree_preorder", bitree_preorder, tree);
+    bitree_travel("bitree_inorder", bitree_inorder, tree);
+    bitree_travel("bitree_postorder", bitree_postorder, tree);
+    bitree_travel("bitree_hierarchy", bitree_hierarchy, tree);
+    bitree_travel("bitree_preorder_stack", bitree_preorder_stack, tree);
+    bitree_travel("bitree_inorder_stack", bitree_inorder_stack, tree);
+    bitree_travel("bitree_postorder_stack", bitree_postorder_stack, tree);
 
     return 0;
 }

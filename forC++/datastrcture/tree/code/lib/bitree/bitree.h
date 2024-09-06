@@ -23,6 +23,8 @@ void bitree_hierarchy(bitree* root);
 void bitree_preorder_stack(bitree* root);
 void bitree_inorder_stack(bitree* root);
 void bitree_postorder_stack(bitree* root);
+
+void bitree_travel(const char * str, void (*pfunc)(bitree*), bitree* root);
 #endif
 
 
