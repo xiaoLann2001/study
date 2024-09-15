@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/book/100ask_imx6ull-sdk/Linux-4.9.88/include",
+                "/home/book/100ask_imx6ull-sdk/Linux-4.9.88/arch/arm/include"
+            ],
+            "defines": [],
+            "compilerPath": "/home/book/100ask_imx6ull-sdk/ToolChain/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-arm"
+        }
+    ],
+    "version": 4
+}
