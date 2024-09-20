@@ -334,7 +334,7 @@ void bitree_postorder_stack(bitree *root)
 
 // 其他方法：
 
-// 1. 用3个while的方法
+// 1. 用2个while的方法
 
 // void backOrderNRec(Tree root){
  

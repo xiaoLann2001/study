@@ -9,6 +9,8 @@
         "unordered_set": "cpp",
         "string_view": "cpp",
         "map": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "random": "cpp",
+        "array": "cpp"
     }
 }
