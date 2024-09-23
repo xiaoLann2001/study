@@ -4,7 +4,9 @@
 
 int main(int argc, char *argv[])
 {
-    qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
+    // 启用虚拟键盘
+    qputenv("QT_IM_MODULE", QByteArray("Qt5Input"));
+
     QApplication a(argc, argv);
     Widget w;
     w.show();

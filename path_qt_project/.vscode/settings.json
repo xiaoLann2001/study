@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "qudpsocket": "cpp",
+        "qdatetime": "cpp",
+        "qdatetime.h": "c",
+        "qobject": "cpp"
+    },
+    "qt-ui.customWidgetsDesignerExePath": "/opt/Qt5.12.8/5.12.8/gcc_64/bin/designer"
+}
