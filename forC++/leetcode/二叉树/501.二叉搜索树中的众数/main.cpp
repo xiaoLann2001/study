@@ -20,73 +20,39 @@ struct TreeNode {
 
 class Solution {
 public:
-    bool isValidBST(TreeNode* root) {
-        bool left_is_vaild = true;
-        bool right_is_vaild = true;
-        if (root->left) {   // 若左子树存在
-            // 若左孩子小于根，遍历左孩子
-            if (root->left->val < root->val) left_is_vaild = isValidBST(root->left);
-            // 否则返回false
-            else left_is_vaild = false;
-            // 求左子树最大元素
-            TreeNode *temp = root->left;
-            while (temp->right) temp = temp->right;
-            if (temp->val >= root->val) left_is_vaild = false;
-        }
-        if (root->right) {
-            if (root->right->val > root->val) right_is_vaild = isValidBST(root->right);
-            else right_is_vaild = false;
-            // 求右子树最小元素
-            TreeNode *temp = root->right;
-            while (temp->left) temp = temp->left;
-            if (temp->val <= root->val) right_is_vaild = false;
-        }
-        return left_is_vaild && right_is_vaild;
-    }
-};
+    vector<int> findMode(TreeNode* root) {
+        // 中序遍历
+        stack<TreeNode*> st;        // 用栈处理节点
+        TreeNode* node = root;      // 用指针遍历二叉树
 
-class Solution1 {
-public:
-    bool isValidBST(TreeNode* root) {
-        if (root->left) {   // 若左子树存在
-            // 若左孩子小于根，遍历左孩子
-            if (root->left->val < root->val) {
-                if (!isValidBST(root->left)) return false;
+        vector<int> result;
+
+        int pre_val = INT32_MAX;    // 记录上一个值，保证不重复
+        int count = 0;              // 记录当前频数
+        int max_cnt = 0;            // 记录最大频数
+        while (!st.empty() || node) {
+            while (node) {
+                st.push(node);
+                node = node->left;          // 左
             }
-            // 否则返回false
-            else return false;
-            // 求左子树最大元素
-            TreeNode *temp = root->left;
-            while (temp->right) temp = temp->right;
-            if (temp->val >= root->val) return false;
-        }
-        if (root->right) {
-            if (root->right->val > root->val) {
-                if (!isValidBST(root->right)) return false;
+            
+            node = st.top();            // 中
+            st.pop();
+            if (node->val == pre_val) count++;  // 若元素重复，计数加一
+            else count = 1;                     // 否则计数归1
+            // 若当前频数等于最大频数，则发现频率相同的众数，将元素加入结果集
+            if (count == max_cnt) result.push_back(node->val);
+            // 若当前频数大于最大频数，则发现频率更高的众数，将之前的结果清空
+            if (count > max_cnt) {
+                result.clear();
+                result.push_back(node->val);
+                max_cnt = count;
             }
-            else return false;
-            // 求右子树最小元素
-            TreeNode *temp = root->right;
-            while (temp->left) temp = temp->left;
-            if (temp->val <= root->val) return false;
+            pre_val = node->val;        // 记录访问节点（只看出栈的节点）
+
+            node = node->right;         // 右
         }
-        return true;
-    }
-};
-
-class Solution2 {
-public:
-    long long maxVal = LONG_MIN; // 因为后台测试数据中有int最小值
-    bool isValidBST(TreeNode* root) {
-        if (root == NULL) return true;
-
-        bool left = isValidBST(root->left);
-        // 中序遍历，验证遍历的元素是不是从小到大
-        if (maxVal < root->val) maxVal = root->val;
-        else return false;
-        bool right = isValidBST(root->right);
-
-        return left && right;
+        return result;
     }
 };
 
@@ -187,14 +153,14 @@ void tree_traversal_level(TreeNode *root)
 int main() {
     Solution s;
 
-    vector<int> vals = {5,1,4,null,null,3,6};   // NULL_FLAG代表空
+    vector<int> vals = {1,null,2,2};   // NULL_FLAG代表空
     TreeNode *t = tree_build_level(&vals);
     tree_traversal_level(t);
 
-    bool result = s.isValidBST(t);
+    vector<int> result = s.findMode(t);
 
-    if (result) cout << "true" << endl;
-    else cout << "false" << endl;
+    for (int n : result)
+        cout << n << ", " << endl;
 
     return 0;
 }

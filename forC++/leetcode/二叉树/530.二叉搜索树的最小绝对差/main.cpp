@@ -20,57 +20,29 @@ struct TreeNode {
 
 class Solution {
 public:
-    bool isValidBST(TreeNode* root) {
-        bool left_is_vaild = true;
-        bool right_is_vaild = true;
-        if (root->left) {   // 若左子树存在
-            // 若左孩子小于根，遍历左孩子
-            if (root->left->val < root->val) left_is_vaild = isValidBST(root->left);
-            // 否则返回false
-            else left_is_vaild = false;
-            // 求左子树最大元素
-            TreeNode *temp = root->left;
-            while (temp->right) temp = temp->right;
-            if (temp->val >= root->val) left_is_vaild = false;
-        }
-        if (root->right) {
-            if (root->right->val > root->val) right_is_vaild = isValidBST(root->right);
-            else right_is_vaild = false;
-            // 求右子树最小元素
-            TreeNode *temp = root->right;
-            while (temp->left) temp = temp->left;
-            if (temp->val <= root->val) right_is_vaild = false;
-        }
-        return left_is_vaild && right_is_vaild;
-    }
-};
+    int getMinimumDifference(TreeNode* root) {
+        // 中序遍历
+        stack<TreeNode*> st;
+        TreeNode* node = root;
+        int pre_val = INT32_MAX;
+        int min = INT32_MAX;
+        while (!st.empty() || node) {
+            // if (node) {
+            while (node) {
+                st.push(node);
+                node = node->left;          // 左
+            }
+            // } else {
+                node = st.top();            // 中
+                st.pop();
+                if (abs(pre_val - node->val) <= min)    // 和上一个节点做绝对差 
+                    min = abs(pre_val - node->val);
+                pre_val = node->val;        // 记录访问节点（只看出栈的节点）
 
-class Solution1 {
-public:
-    bool isValidBST(TreeNode* root) {
-        if (root->left) {   // 若左子树存在
-            // 若左孩子小于根，遍历左孩子
-            if (root->left->val < root->val) {
-                if (!isValidBST(root->left)) return false;
-            }
-            // 否则返回false
-            else return false;
-            // 求左子树最大元素
-            TreeNode *temp = root->left;
-            while (temp->right) temp = temp->right;
-            if (temp->val >= root->val) return false;
+                node = node->right;         // 右
+            // }
         }
-        if (root->right) {
-            if (root->right->val > root->val) {
-                if (!isValidBST(root->right)) return false;
-            }
-            else return false;
-            // 求右子树最小元素
-            TreeNode *temp = root->right;
-            while (temp->left) temp = temp->left;
-            if (temp->val <= root->val) return false;
-        }
-        return true;
+        return min;
     }
 };
 
@@ -187,14 +159,13 @@ void tree_traversal_level(TreeNode *root)
 int main() {
     Solution s;
 
-    vector<int> vals = {5,1,4,null,null,3,6};   // NULL_FLAG代表空
+    vector<int> vals = {1,0,48,null,null,12,49};   // NULL_FLAG代表空
     TreeNode *t = tree_build_level(&vals);
     tree_traversal_level(t);
 
-    bool result = s.isValidBST(t);
+    int result = s.getMinimumDifference(t);
 
-    if (result) cout << "true" << endl;
-    else cout << "false" << endl;
+    cout << result << endl;
 
     return 0;
 }
