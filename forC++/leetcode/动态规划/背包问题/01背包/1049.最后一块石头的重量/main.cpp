@@ -14,6 +14,7 @@ public:
         vector<int> dp(target + 1, 0);
         for (int i = 0; i < stones.size(); i++) {
             for (int j = target; j >= 0; j--) {
+                // if 写在循环条件里面也行，因为背包容量从大到小遍历，容量装不下当前物品时，前面的就更装不下了
                 if (stones[i] <= j) dp[j] = max(dp[j], dp[j - stones[i]] + stones[i]); 
             }
         }
