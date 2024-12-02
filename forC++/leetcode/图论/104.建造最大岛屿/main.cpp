@@ -1,0 +1,109 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+const vector<pair<int, int>> dir = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};  // 方向
+
+int n, m;   // 矩阵高宽
+vector<vector<int>> grid;           // 地图
+vector<vector<int>> visited;        // 已访问格子
+vector<vector<int>> island_idx;     // 岛屿编号
+unordered_map<int, int> island_squre;   // 岛屿大小
+
+// i,j: 格子坐标，idx:用idx
+// 返回值：岛屿大小
+int dfs(int i, int j, int idx) {
+    // 处理当前节点
+    visited[i][j] = 1;  // 标记已访问
+    int squre = 1;  // 当前格子大小为1
+    island_idx[i][j] = idx; // 用idx标记岛屿编号
+    // 处理相邻节点
+    for (auto v : dir) {
+        int x_next = i + v.first;
+        int y_next = j + v.second;
+        if (x_next < 0 || y_next < 0 || x_next >= n || y_next >= m) continue;
+        if (grid[x_next][y_next] == 1 && visited[x_next][y_next] == 0) {
+            squre += dfs(x_next, y_next, idx);
+        }
+    }
+    return squre;
+}
+
+// i,j: 格子坐标，idx:用idx
+// 返回值：岛屿大小
+int bfs(int i, int j, int idx) {
+    int squre = 0;  // 统计岛屿大小
+    queue<pair<int, int>> queue_next;   // 记录下一圈要访问的格子
+    queue_next.push(pair<int, int>(i, j));
+    visited[i][j] = 1;  // 标记已访问
+    while (!queue_next.empty()) {
+        // 取出队列元素处理
+        int x_cur = queue_next.front().first;
+        int y_cur = queue_next.front().second;
+        queue_next.pop();
+        squre++;    // 面积加1
+        island_idx[x_cur][y_cur] = idx; // 标记岛屿编号
+        // 处理相邻节点
+        for (auto v : dir) {
+            int x_next = x_cur + v.first;
+            int y_next = y_cur + v.second;
+            if (x_next < 0 || y_next < 0 || x_next >= n || y_next >= m) continue;
+            if (grid[x_next][y_next] == 1 && visited[x_next][y_next] == 0) {
+                queue_next.push(pair<int, int>(x_next, y_next));
+                visited[x_next][y_next] = 1;    // 标记已访问
+            }
+        }
+    }
+    return squre;
+}
+
+int main() {
+    // 输入并初始化
+    cin >> n >> m;
+    grid.resize(n, vector<int>(m));             // 地图
+    visited.resize(n, vector<int>(m, 0));       // 已访问格子
+    island_idx.resize(n, vector<int>(m, 0));    // 岛屿编号
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> grid[i][j];
+        }
+    }
+
+    // 标记岛屿编号并求其大小
+    int idx = 1;    // 岛屿编号初始值   
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (grid[i][j] == 0 || visited[i][j] == 1) continue;// 水域或已访问
+            island_squre[idx] = bfs(i, j, idx); // 记录对应编号岛屿的大小
+            idx++;
+        }
+    }
+
+    // 遍历水格子，求该格子变为陆地后的最大岛屿大小
+    int max_island_squre = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (grid[i][j] == 0) {  // 若为水域
+                int squre_sum = 0;
+                unordered_set<int> existed_idx; // 防止记录重复岛屿
+                for (auto v : dir) {    // 求四个方向的不同岛屿的面积之和
+                    int x_around = i + v.first;
+                    int y_around = j + v.second;
+                    if (x_around < 0 || y_around < 0 || x_around >= n || y_around >= m) continue;
+                    int idx_around = island_idx[x_around][y_around];
+                    if (existed_idx.count(idx_around) == 0) {
+                        existed_idx.insert(idx_around);
+                        squre_sum += island_squre[idx_around];
+                    }
+                }
+                max_island_squre = max(max_island_squre, 1 + squre_sum);
+            } else { // 若为陆地
+                max_island_squre = max(max_island_squre, island_squre[island_idx[i][j]]);
+            }
+        }
+    }
+    
+    cout << max_island_squre << endl;
+
+    return 0;
+}
