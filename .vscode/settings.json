@@ -70,5 +70,6 @@
         "shared_mutex": "cpp",
         "typeindex": "cpp",
         "valarray": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/book/nfs_rootfs/study/forC++/DataStrcture/question_ballclock"
 }
