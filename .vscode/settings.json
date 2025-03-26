@@ -69,7 +69,12 @@
         "scoped_allocator": "cpp",
         "shared_mutex": "cpp",
         "typeindex": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "any": "cpp",
+        "bit": "cpp",
+        "charconv": "cpp",
+        "netfwd": "cpp",
+        "variant": "cpp"
     },
     "cmake.sourceDirectory": "/home/book/nfs_rootfs/study/forC++/DataStrcture/question_ballclock"
 }
