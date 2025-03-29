@@ -29,7 +29,7 @@ public:
     ListNode* Merge(ListNode* pHead1, ListNode* pHead2) {
         // 特殊情况
         if (!pHead1) return pHead2;
-        if (!pHead2) return pHead1;
+        else if (!pHead2) return pHead1;
 
         // 一般情况
         ListNode* pMergedHead = NULL;               // 合并后的链表头节点指针，可以视为虚拟头节点的next指针
@@ -47,16 +47,11 @@ public:
             pTempOfNext = &(*pTempOfNext)->next;    // 更新合并后链表尾节点的next指针
         }
 
-        // 将剩余节点加入结果链表中
-        while (pTemp1) {
+        // 将剩余链表的头节点加入结果链表中
+        if (pTemp1) {
             *pTempOfNext = pTemp1;
-            pTemp1 = pTemp1->next;
-            pTempOfNext = &(*pTempOfNext)->next;
-        }
-        while (pTemp2) {
+        } else if (pTemp2) {
             *pTempOfNext = pTemp2;
-            pTemp2 = pTemp2->next;
-            pTempOfNext = &(*pTempOfNext)->next;
         }
         
         return pMergedHead;
