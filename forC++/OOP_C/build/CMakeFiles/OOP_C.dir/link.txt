@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/OOP_C.dir/main.c.o CMakeFiles/OOP_C.dir/class/Shape/Shape.c.o CMakeFiles/OOP_C.dir/class/Rectangle/Rectangle.c.o  -o OOP_C 

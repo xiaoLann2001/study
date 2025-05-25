@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../class/Rectangle/Rectangle.h
+stdio.h
+-
+Shape.h
+../class/Rectangle/Shape.h
+
+../class/Shape/Shape.h
+
+/home/xiaolan/study/forC++/OOP_C/class/Rectangle/Rectangle.c
+Rectangle.h
+/home/xiaolan/study/forC++/OOP_C/class/Rectangle/Rectangle.h
+
+/home/xiaolan/study/forC++/OOP_C/class/Rectangle/Rectangle.h
+stdio.h
+-
+Shape.h
+/home/xiaolan/study/forC++/OOP_C/class/Rectangle/Shape.h
+
+/home/xiaolan/study/forC++/OOP_C/class/Shape/Shape.c
+Shape.h
+/home/xiaolan/study/forC++/OOP_C/class/Shape/Shape.h
+
+/home/xiaolan/study/forC++/OOP_C/class/Shape/Shape.h
+
+/home/xiaolan/study/forC++/OOP_C/main.c
+stdio.h
+-
+Shape.h
+/home/xiaolan/study/forC++/OOP_C/Shape.h
+Rectangle.h
+/home/xiaolan/study/forC++/OOP_C/Rectangle.h
+

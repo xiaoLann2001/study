@@ -1,0 +1,3 @@
+/home/xiaolan/study/forC++/OOP_C/build/CMakeFiles/rebuild_cache.dir
+/home/xiaolan/study/forC++/OOP_C/build/CMakeFiles/edit_cache.dir
+/home/xiaolan/study/forC++/OOP_C/build/CMakeFiles/OOP_C.dir
