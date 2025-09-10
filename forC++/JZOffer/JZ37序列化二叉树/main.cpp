@@ -70,7 +70,7 @@ void tree_traversal_level(TreeNode *root)
     {
         ret = queue.front();
         queue.pop();
-        cout << ret->val << ", ";
+        cout << ret->val << ",";
 
         if (ret->left != NULL)
             queue.push(ret->left);
@@ -98,62 +98,56 @@ public:
                 result[index] = '#';
                 index++;
             } else {
-                result[index] = (char)('0' + node->val);
-                index++;
+                string numStr = to_string(node->val);
+                strncpy(result + index, numStr.c_str(), numStr.size());
+                index += numStr.size();
                 q.push(node->left);
                 q.push(node->right);
             }
+            result[index] = ',';    // 节点数值分隔符
+            index++;
         }
 
-        // 去掉尾部的 #
+        // 去掉尾部的 # 和 ,
         index--;
-        while (result[index] == '#') {
+        while (result[index] == ',' || result[index] == '#') {
             result[index] = '\0';
             index--;
         }
 
         return result;
     }   
-    TreeNode* Deserialize(char *str) {
-        // 反序列化即根据层序遍历结果，构造二叉树，规定 '#' 为空节点
-        if (!str)
-            return NULL;
-        
-        int index = 0;
-        TreeNode* root = NULL;
-        queue<TreeNode*> q;
-        if (str[index] == '#')
-            return NULL;
-        else {
-            root = new TreeNode(str[index] - '0');
-            q.push(root);
-            index++;
-        }
+    TreeNode* Deserialize(const char *str) {
+        if (!str || *str == '\0') return nullptr;
 
-        while (!q.empty() && index < strlen(str)) {
-            // 当前待处理节点
-            TreeNode* node = q.front();
+        stringstream ss(str);
+        string token;
+
+        // 读取根节点
+        if (!getline(ss, token, ',')) return nullptr;
+        if (token == "#") return nullptr;
+
+        TreeNode* root = new TreeNode(stoi(token));
+        queue<TreeNode*> q;
+        q.push(root);
+
+        while (!q.empty()) {
+            TreeNode* curr = q.front();
             q.pop();
 
             // 左子节点
-            if (str[index] == '#')
-                node->left = NULL;
-            else {
-                node->left =  new TreeNode(str[index] - '0');
-                q.push(node->left);
+            if (!getline(ss, token, ',')) break;
+            if (token != "#") {
+                curr->left = new TreeNode(stoi(token));
+                q.push(curr->left);
             }
-            index++;
 
             // 右子节点
-            if (index >= strlen(str))
-                break;
-            if (str[index] == '#')
-                node->right = NULL;
-            else {
-                node->right =  new TreeNode(str[index] - '0');
-                q.push(node->right);
+            if (!getline(ss, token, ',')) break;
+            if (token != "#") {
+                curr->right = new TreeNode(stoi(token));
+                q.push(curr->right);
             }
-            index++;
         }
 
         return root;
@@ -163,7 +157,7 @@ public:
 int main() {
     Solution s;
 
-    char str[] = {'1', '2', '3', '#', '#', '6', '7'};
+    char str[] = "100,50,#,#,150";
 
     TreeNode* ret = s.Deserialize(str);
 
