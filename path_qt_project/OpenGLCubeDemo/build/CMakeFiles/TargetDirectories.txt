@@ -1,0 +1,4 @@
+/home/xiaolan/study/path_qt_project/OpenGLCubeDemo/build/CMakeFiles/rebuild_cache.dir
+/home/xiaolan/study/path_qt_project/OpenGLCubeDemo/build/CMakeFiles/edit_cache.dir
+/home/xiaolan/study/path_qt_project/OpenGLCubeDemo/build/CMakeFiles/OpenGLCubeDemo.dir
+/home/xiaolan/study/path_qt_project/OpenGLCubeDemo/build/CMakeFiles/OpenGLCubeDemo_autogen.dir
