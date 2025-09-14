@@ -1,0 +1,4 @@
+/home/xiaolan/study/path_qt_project/OpenGLImageDemo/build/CMakeFiles/rebuild_cache.dir
+/home/xiaolan/study/path_qt_project/OpenGLImageDemo/build/CMakeFiles/edit_cache.dir
+/home/xiaolan/study/path_qt_project/OpenGLImageDemo/build/CMakeFiles/OpenGLImageDemo.dir
+/home/xiaolan/study/path_qt_project/OpenGLImageDemo/build/CMakeFiles/OpenGLImageDemo_autogen.dir
